@@ -1,9 +1,13 @@
 import React from 'react';
+import { GlobalFontStyles } from './css/fonts';
 import Home from './pages/Home';
 
 function App() {
   return (
-    <Home />
+    <>
+      <GlobalFontStyles />
+      <Home />
+    </>
   );
 }
 

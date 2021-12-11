@@ -1,24 +1,32 @@
 import styled from 'styled-components';
+import {
+  COLOR_HR,
+  COLOR_LISTS_GRADIENT_END,
+  COLOR_LISTS_GRADIENT_START,
+  COLOR_LIST_TITLE
+} from '../../utils/constants/color';
 
 export const Wrapper = styled.div`
-  background: #373b44; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #373b44, #4286f4); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #373b44, #4286f4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: ${COLOR_LISTS_GRADIENT_START};
+  background: -webkit-linear-gradient(to right, ${COLOR_LISTS_GRADIENT_START}, ${COLOR_LISTS_GRADIENT_END});
+  background: linear-gradient(to right, ${COLOR_LISTS_GRADIENT_START}, ${COLOR_LISTS_GRADIENT_END});
   width: 400px;
   height: 500px;
   -webkit-border-radius: 40px;
   -moz-osx-border-radius: 40px;
-  padding: 10px;
 `
 
 export const Title = styled.h1`
-  color: #fff;
-  margin-left: 25px;
+  color: ${COLOR_LIST_TITLE};
 `
 
 export const Divider = styled.hr`
-  border: 1px solid #8c97bd;
+  border: 1px solid ${COLOR_HR};
   width: 80%;
-  margin-left: 25px;
+  margin-left: 0;
   margin-top: 0;
+`
+
+export const ListsDiv = styled.div`
+  padding: 0 25px 0 25px;
 `
