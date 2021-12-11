@@ -3,7 +3,7 @@ import { ListType } from '../../types/interfaces';
 import List from '../List';
 
 // Styles
-import { Wrapper, Title, Divider, ListsDiv } from './styles';
+import { Wrapper, Title, Divider, ListsDiv, PlusSign } from './styles';
 
 type Props = {
   lists: ListType[];
@@ -22,6 +22,7 @@ const Lists: FC<Props> = ({ lists, onDelete }) => {
           );
         })}
       </ListsDiv>
+      <PlusSign />
     </Wrapper>
   );
 };

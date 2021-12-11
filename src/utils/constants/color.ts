@@ -6,3 +6,5 @@ export const COLOR_HR = '#8c97bd';
 export const COLOR_LISTS_GRADIENT_START = '#373b44';
 export const COLOR_LISTS_GRADIENT_END = '#4286f4';
 export const COLOR_DELETE_ICON = '#fff';
+export const COLOR_PLUS_SIGN_TEXT = '#fff';
+export const COLOR_PLUS_SIGN_BACKGROUND = '#38e0ef';
