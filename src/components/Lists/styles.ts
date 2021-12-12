@@ -5,7 +5,10 @@ import {
   COLOR_LISTS_GRADIENT_START,
   COLOR_LIST_TITLE,
   COLOR_PLUS_SIGN_BACKGROUND,
-  COLOR_PLUS_SIGN_TEXT
+  COLOR_PLUS_SIGN_TEXT,
+  COLOR_SCROLLBAR_THUMB,
+  COLOR_SCROLLBAR_THUMB_HOVER,
+  COLOR_SCROLLBAR_TRACK
 } from '../../utils/constants/color';
 
 export const Wrapper = styled.div`
@@ -18,6 +21,28 @@ export const Wrapper = styled.div`
   -moz-osx-border-radius: 40px;
   position: relative;
   overflow: hidden;
+
+  .listsWrapper {
+    height: 330px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: ${COLOR_SCROLLBAR_TRACK}; 
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: ${COLOR_SCROLLBAR_THUMB};
+    }
+    
+    &::-webkit-scrollbar-thumb:hover {
+      background: ${COLOR_SCROLLBAR_THUMB_HOVER}; 
+    }
+  };
 `
 
 export const Title = styled.h1`
@@ -33,8 +58,6 @@ export const Divider = styled.hr`
 
 export const ListsDiv = styled.div`
   padding: 0 25px 0 25px;
-  height: 100%;
-  -webkit-mask-image: -webkit-gradient(linear, left 50%, left bottom, from(black), to(rgba(0, 0, 0, 0)));
 `
 
 export const PlusSign = styled.div`

@@ -29,11 +29,13 @@ const Lists: FC<Props> = ({ lists, onDelete, onAdd }) => {
       <ListsDiv>
         <Title>Lists</Title>
         <Divider />
-        {lists.map((e, i) => {
-          return (
-            <List list={e} onDelete={onDelete} />
-          );
-        })}
+        <div className='listsWrapper'>
+          {lists.map((e, i) => {
+            return (
+              <List list={e} onDelete={onDelete} />
+            );
+          })}
+        </div>
       </ListsDiv>
       <PlusSign onClick={() => handleOpenModal()} />
       {isModalOpen && <Modal onSave={handleAddList} onClose={handleCloseModal} />}

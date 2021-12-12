@@ -21,3 +21,6 @@ export const COLOR_MODAL_CLOSE_BUTTON_TEXT = '#fff';
 export const COLOR_MODAL_HR = '#9a9a9a';
 export const COLOR_MODAL_OVERLAY = 'rgba(0, 0, 0, 0.5)';
 export const COLOR_MODAL_FORM_VALIDATION_ERROR = 'red';
+export const COLOR_SCROLLBAR_TRACK = '#f1f1f1';
+export const COLOR_SCROLLBAR_THUMB = COLOR_HR;
+export const COLOR_SCROLLBAR_THUMB_HOVER = '#555';
