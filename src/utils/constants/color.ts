@@ -20,3 +20,4 @@ export const COLOR_MODAL_CLOSE_BUTTON_BACKGROUND = '#ff2e69';
 export const COLOR_MODAL_CLOSE_BUTTON_TEXT = '#fff';
 export const COLOR_MODAL_HR = '#9a9a9a';
 export const COLOR_MODAL_OVERLAY = 'rgba(0, 0, 0, 0.5)';
+export const COLOR_MODAL_FORM_VALIDATION_ERROR = 'red';

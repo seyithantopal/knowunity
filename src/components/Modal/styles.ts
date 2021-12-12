@@ -58,11 +58,7 @@ export const Wrapper = styled.div`
         justify-content: space-around;
         align-items: center;
         height: 100%;
-        input {
-          &:not(:last-child) {
-            margin-bottom: 1rem;
-          }
-        }
+        position: relative;
       }
     }
 

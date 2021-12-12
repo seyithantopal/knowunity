@@ -1,7 +1,8 @@
 import React, { FC, useState, useEffect, useRef, SyntheticEvent } from 'react';
 
 // Styles
-import { Wrapper, SubmitButton, CloseButton, Input, XButton, ModalTitle } from './styles';
+import { Wrapper, SubmitButton, CloseButton, XButton, ModalTitle } from './styles';
+import Input from '../../css/shared/Input';
 
 type Props = {
   onClose: () => void;
@@ -11,6 +12,7 @@ type Props = {
 const Modal: FC<Props> = ({ onClose, onSave }) => {
   const modalElement = useRef<HTMLDivElement>(null);
   const [list, setList] = useState<string>('');
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -24,8 +26,11 @@ const Modal: FC<Props> = ({ onClose, onSave }) => {
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    onSave(list);
-    onClose();
+    if (list === '') setErrors({ list: 'Please enter the name of the list' });
+    else {
+      onSave(list);
+      onClose();
+    }
   };
 
   return (
@@ -37,7 +42,7 @@ const Modal: FC<Props> = ({ onClose, onSave }) => {
         </div>
         <div className='modal__body'>
           <form id='form' onSubmit={handleSubmit}>
-            <Input value={list} onChange={(e) => setList(e.target.value)} />
+            <Input list={list} setList={setList} errors={errors} errorField='list' />
           </form>
         </div>
         <div className='modal__footer'>

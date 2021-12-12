@@ -15,16 +15,13 @@ type Props = {
 const Lists: FC<Props> = ({ lists, onDelete, onAdd }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const handleOpenModal = () => {
-    console.log('Modal open clicked');
     setIsModalOpen(true);
   };
   const handleCloseModal = () => {
-    console.log('Modal close clicked');
     setIsModalOpen(prev => !prev);
   };
 
   const handleAddList = (title: string) => {
-    console.log('handleSaveList: ', title);
     onAdd(title);
   };
   return (
