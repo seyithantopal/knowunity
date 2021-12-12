@@ -24,7 +24,7 @@ export const SingleList = styled.div<CheckboxType>`
 
   .check {
     width: 20px;
-    height: 20px;   
+    height: 20px;
   };
 `
 

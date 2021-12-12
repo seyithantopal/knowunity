@@ -26,7 +26,7 @@ const mockData : ListType[] = [
     "title": "fugiat veniam minus",
     "completed": false
   },
-  {
+  /*{
     "userId": 1,
     "id": 4,
     "title": "et porro tempora",
@@ -67,14 +67,14 @@ const mockData : ListType[] = [
     "id": 10,
     "title": "illo est ratione doloremque quia maiores aut",
     "completed": true
-  },
+  },*/
 ];
 
 const Home: FC = () => {
   const [lists, setLists] = useState<ListType[]>(mockData);
 
   /**
-   * Delete a task by id without mutating the state directly
+   * Delete a list by id without mutating the state directly
    * @param {number} id
    * @returns {void}
    */
@@ -82,9 +82,26 @@ const Home: FC = () => {
     const newList = lists.filter(list => list.id !== id);
     setLists(newList);
   };
+
+  /**
+   * Add a list without mutation the state directly. Before adding a list, check the id
+   * of the last item because we had implemented delete functionality based on the id of the item
+   * @param {string} title
+   * @returns {void}
+   */
+  const handleAdd = (title: string): void => {
+    const lastList = lists.slice(-1)[0];
+    const newList: ListType = {
+      userId: 1,
+      id: lastList.id + 1,
+      title: title,
+      completed: false
+    };
+    setLists([ ...lists, newList ]);
+  };
   return (
     <Wrapper>
-      <Lists lists={lists} onDelete={handleDelete} />
+      <Lists lists={lists} onAdd={handleAdd} onDelete={handleDelete} />
     </Wrapper>
   );
 };

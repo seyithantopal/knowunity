@@ -1,6 +1,7 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { ListType } from '../../types/interfaces';
 import List from '../List';
+import Modal from '../Modal';
 
 // Styles
 import { Wrapper, Title, Divider, ListsDiv, PlusSign } from './styles';
@@ -8,9 +9,24 @@ import { Wrapper, Title, Divider, ListsDiv, PlusSign } from './styles';
 type Props = {
   lists: ListType[];
   onDelete: (id: number) => void;
+  onAdd: (title: string) => void;
 };
 
-const Lists: FC<Props> = ({ lists, onDelete }) => {
+const Lists: FC<Props> = ({ lists, onDelete, onAdd }) => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const handleOpenModal = () => {
+    console.log('Modal open clicked');
+    setIsModalOpen(true);
+  };
+  const handleCloseModal = () => {
+    console.log('Modal close clicked');
+    setIsModalOpen(prev => !prev);
+  };
+
+  const handleAddList = (title: string) => {
+    console.log('handleSaveList: ', title);
+    onAdd(title);
+  };
   return (
     <Wrapper>
       <ListsDiv>
@@ -22,7 +38,8 @@ const Lists: FC<Props> = ({ lists, onDelete }) => {
           );
         })}
       </ListsDiv>
-      <PlusSign />
+      <PlusSign onClick={() => handleOpenModal()} />
+      {isModalOpen && <Modal onSave={handleAddList} onClose={handleCloseModal} />}
     </Wrapper>
   );
 };

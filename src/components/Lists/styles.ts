@@ -18,23 +18,6 @@ export const Wrapper = styled.div`
   -moz-osx-border-radius: 40px;
   position: relative;
   overflow: hidden;
-
-
-  .plusSign {
-    background-color: #38e0ef;
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    -webkit-border-radius: 50%;
-    bottom: 25px;
-    right: 25px;
-    font-size: 32px;
-    color: #fff;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  };
 `
 
 export const Title = styled.h1`

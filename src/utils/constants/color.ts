@@ -8,3 +8,15 @@ export const COLOR_LISTS_GRADIENT_END = '#4286f4';
 export const COLOR_DELETE_ICON = '#fff';
 export const COLOR_PLUS_SIGN_TEXT = '#fff';
 export const COLOR_PLUS_SIGN_BACKGROUND = '#38e0ef';
+
+export const COLOR_MODAL_BACKGROUND = '#fff';
+export const COLOR_MODAL_TITLE = 'rgb(58, 58, 58)';
+export const COLOR_MODAL_X_BUTTON = 'rgb(58, 58, 58)';
+export const COLOR_MODAL_X_BUTTON_HOVER = '#000';
+export const COLOR_MODAL_LIST_TEXTBOX_BORDER = '#b8bec4';
+export const COLOR_MODAL_SUBMIT_BUTTON_BACKGROUND = '#1e26d1';
+export const COLOR_MODAL_SUBMIT_BUTTON_TEXT = '#fff';
+export const COLOR_MODAL_CLOSE_BUTTON_BACKGROUND = '#ff2e69';
+export const COLOR_MODAL_CLOSE_BUTTON_TEXT = '#fff';
+export const COLOR_MODAL_HR = '#9a9a9a';
+export const COLOR_MODAL_OVERLAY = 'rgba(0, 0, 0, 0.5)';
