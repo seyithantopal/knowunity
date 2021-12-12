@@ -6,10 +6,17 @@ import Delete from '../../assets/icons/Delete';
 export const Wrapper = styled.div`
   // background-color: pink;
 `
-export const SingleList = styled.div<CheckboxType>`
+export const Label = styled.label`
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 100%;
+`
+
+export const SingleList = styled.div<CheckboxType>`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
   margin-bottom: 15px;
 
   .rightWrapper {
